@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+<composite:interface>
+	<composite:attribute name="searchWordLabel" />
+	<composite:attribute name="searchWordValue" />
+ 
+	<composite:attribute name="registerButtonText" />
+	<composite:attribute name="registerButtonAction" method-signature="java.lang.String action()" />
+	<composite:attribute name="managedBean"/>
+</composite:interface>
+
+<composite:implementation>
+	<h:form>
+		<h:message for="textPanel" style="color:red;" />
+		<h:panelGrid columns="2" id="textPanel">
+		   #{cc.attrs.searchWordLabel} : 
+		   <h:inputText id="name" value="#{cc.attrs.searchWordValue}" p:placeholder="aa or bb or cc"/>
+		</h:panelGrid>
+		<h:commandButton action="#{cc.attrs.registerButtonAction}"
+			value="#{cc.attrs.registerButtonText}" />
+	</h:form>
+</composite:implementation>
+
+</html>

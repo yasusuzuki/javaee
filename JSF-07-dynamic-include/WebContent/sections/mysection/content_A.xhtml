@@ -1,0 +1,13 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:util="http://java.sun.com/jsf/composite/components/util">
+
+該当するレコードはありません。全件表示します。
+<ul>
+	<ui:repeat value="#{mySearchBean.myList}" var="var" status="stat">
+		<li>#{var} </li>
+	</ui:repeat>
+</ul>
+</ui:composition>
